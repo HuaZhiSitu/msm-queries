@@ -1,0 +1,29 @@
+<h1>List of all actors</h1>
+<table border="1" cellpadding="10" cellspacing="0">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Image</th>
+      <th>Name</th>
+      <th>Dob</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @actors.each do |actors| %>
+      <tr>
+        <td><%= actors.id %></td>
+        <td>
+          <% if actors.image.present? %>
+            <img src="<%= actors.image %>" alt="<%= actors.name %>" style="width: 150px; height: auto;">
+          <% else %>
+            <p>No Image Available</p>
+          <% end %>
+        </td>
+        <td><%= actors.name %></td>
+        <td><%= actors.dob %></td>
+        <td><a href="/actors/<%= actors.id %>">Show details</a></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

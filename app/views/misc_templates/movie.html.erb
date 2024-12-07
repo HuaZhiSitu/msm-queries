@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Target: MSM Queries</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+  </head>
+
+    <h1>
+  Movie #<%=@movies.id%> details
+</h1>
+
+<a href="/movies">
+  Go back
+</a>
+
+<hr>
+
+<dl>
+  <dt>
+    Title
+  </dt>
+  <dd>
+    <%=@movies.title%>
+  </dd>
+
+  <dt>
+    Year
+  </dt>
+  <dd>
+    <%=@movies.year%>
+  </dd>
+
+  <dt>
+    Duration
+  </dt>
+  <dd>
+    <%=@movies.duration%>
+  </dd>
+
+  <dt>
+    Description
+  </dt>
+  <dd>
+    <%=@movies.description%>
+  </dd>
+
+  <dt>
+    Image
+  </dt>
+  <dd>
+    <img src="<%=@movies.image%>" style="width:250px;">
+  </dd>
+
+  <dt>
+    Director
+  </dt>
+  <dd>
+    <%=@directorid[@movies.director_id]&.name || "Unknown Director"%>
+  </dd>
+
+ <!--  <td><%#= @directorid[movies.director_id]&.name || "Unknown Director" %></td>-->
+
+
+  <dt>
+    Created at
+  </dt>
+  <dd>
+    <%=@movies.created_at%>
+  </dd>
+
+  <dt>
+    Updated at
+  </dt>
+  <dd>
+    <%=@movies.updated_at%>
+  </dd>
+</dl>
+
+<hr>
+
+  </body>
+</html>
